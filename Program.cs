@@ -3,14 +3,15 @@
 namespace BasicLibrary
 {
     internal class Program
-    {// test check out
+    {
+        //Tuple to save the data of the books
         static List<(string BName, string BAuthor, int ID, int Qnt)> Books = new List<(string BName, string BAuthor, int ID, int Qnt)>();
         static string filePath = "C:\\Users\\Karim\\Downloads\\OutSystem_Course\\GitHubRepos\\Data\\lib.txt";
         
         static void Main(string[] args)
         { 
             bool ExitFlag = false;
-
+            // Load data from the file
             LoadBooksFromFile();
 
             do
@@ -92,8 +93,6 @@ namespace BasicLibrary
             } while (ExitFlag != true);
 
         }
-
-
         static void UserMenu()
         {
 
@@ -145,10 +144,6 @@ namespace BasicLibrary
 
 
         }
-        
-        
-        
-        
         static void AddnNewBook() 
         { 
                  Console.WriteLine("Enter Book Name");
@@ -163,11 +158,10 @@ namespace BasicLibrary
             Console.WriteLine("Enter Book ID");
             int qnt = int.Parse(Console.ReadLine());
 
-            Books.Add(  ( name, author, ID, qnt )  );
+            Books.Add( ( name, author, ID, qnt )  );
                   Console.WriteLine("Book Added Succefully");
 
         }
-
         static void ViewAllBooks()
         {
             StringBuilder sb = new StringBuilder();
@@ -188,7 +182,6 @@ namespace BasicLibrary
 
             }
         }
-
         static void SearchForBook()
         {
             Console.WriteLine("Enter the book name you want");
@@ -208,7 +201,6 @@ namespace BasicLibrary
             if (flag != true)
             { Console.WriteLine("book not found"); }
         }
-
         static void LoadBooksFromFile()
         {
             try
@@ -220,7 +212,7 @@ namespace BasicLibrary
                         string line;
                         while ((line = reader.ReadLine()) != null)
                         {
-                            var parts = line.Split('|');
+                            var  parts = line.Split('|');
                             if (parts.Length == 4)
                             {
                                 Books.Add((parts[0], parts[1], int.Parse(parts[2]), int.Parse(parts[3])));
@@ -235,7 +227,6 @@ namespace BasicLibrary
                 Console.WriteLine($"Error loading from file: {ex.Message}");
             }
         }
-
         static void SaveBooksToFile()
         {
             try

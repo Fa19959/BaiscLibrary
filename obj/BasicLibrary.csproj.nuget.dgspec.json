@@ -11,7 +11,7 @@
         "projectName": "BasicLibrary",
         "projectPath": "C:\\Users\\fatma\\source\\repos\\BasicLibarary\\BasicLibrary.csproj",
         "packagesPath": "C:\\Users\\fatma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fatma\\Source\\Repos\\BasicLibarary\\obj\\",
+        "outputPath": "C:\\Users\\fatma\\source\\repos\\BasicLibarary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
